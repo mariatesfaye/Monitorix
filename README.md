@@ -16,19 +16,19 @@ Real-time Updates: The tool updates data visuals every 3 seconds, providing near
 Performance Metrics Tracked
 Monitorix currently tracks 8 core performance metrics:
 
-Memory
-Total Memory
-Free Memory
-Used Memory
+Memory-
+Total Memory,
+Free Memory,
+Used Memory,
 Percentage Memory Utilization
 
-CPU
+CPU-
 Percentage CPU Utilization
 
-Network
-Bytes Sent per Second on Each Network Interface
+Network-
+Bytes Sent per Second on Each Network Interface,
 Bytes Received per Second on Each Network Interface
 
-Disk
-Disk Read per Second for Each Mounted Disk
+Disk-
+Disk Read per Second for Each Mounted Disk-
 Disk Write per Second for Each Mounted Disk
