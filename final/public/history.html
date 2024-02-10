@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CPU Monitor</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <style>
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f5f5f5;
+            }
+    
+            nav {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 10px;
+            }
+    
+            a {
+                text-decoration: none;
+                color: #fff;
+                margin: 0 15px;
+                font-weight: bold;
+            }
+    
+            h1 {
+                text-align: center;
+                color: #333;
+                margin-top: 20px;
+            }
+    
+            #cpuusage {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 18px;
+                color: #333;
+            }
+    
+            canvas {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            #chartContainer {
+                height: 370px;
+                width: 100%;
+                background-color: #fff;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin: 20px 0;
+            }
+        </style>
+    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <body>
+        <nav>
+            <a href="./index.html">home</a> 
+            <a href="./cpu.html">CPU</a> 
+            <a href="./memory.html">Memory</a> 
+            <a href="./network.html">Network</a> 
+            <a href="./disk.html">Disk</a>
+            <a href="./history.html">history</a>
+        </nav>
+    
+        <h1>history Monitor</h1>
+        <!-- <div id="cpuusage">Change</div> -->
+        <!-- <canvas id="memoryChart" width="800" height="400"></canvas> -->
+        <script src="history.js"></script>
+        
+        <div>
+            <h2>CPU</h2>
+            <canvas id="myChart" style="width:100%;max-width:900px"></canvas>
+        </div>
+        <div>
+            <h2>MEMORY</h2>
+            <canvas id="myChart1" style="width:100%;max-width:900px"></canvas>
+        </div>
+        <div>
+            <h2>DISK</h2>
+            <canvas id="myChart2" style="width:100%;max-width:900px"></canvas>
+        </div>
+        <div>
+            <h2>Network</h2>
+            <canvas id="myChart3" style="width:100%;max-width:900px"></canvas>
+        </div>
+    
+    
+        <!-- <div id="chartContainer"></div> -->
+        <!-- <div >
+            <h4>Totalusage:<p id="use">20</p></h4>
+            <h4>Currenet time:<p id="time">12:1</p></h4>
+            <h4>Cpu model:<p id="model">hp</p></h4>
+            
+        </div> -->
+    </body>
+    </html>
