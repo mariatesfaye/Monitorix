@@ -1,4 +1,5 @@
-Linux System Performance Monitoring Platform
+Monitorix- A Linux System Performance Monitoring Platform
+
 This repository contains code for a web-based platform designed to monitor key Linux system performance metrics. It offers insights into network, CPU, memory, and disk usage in real-time, facilitating efficient system management.
 
 Features
@@ -20,11 +21,14 @@ Total Memory
 Free Memory
 Used Memory
 Percentage Memory Utilization
+
 CPU
 Percentage CPU Utilization
+
 Network
 Bytes Sent per Second on Each Network Interface
 Bytes Received per Second on Each Network Interface
+
 Disk
 Disk Read per Second for Each Mounted Disk
 Disk Write per Second for Each Mounted Disk
