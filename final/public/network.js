@@ -1,27 +1,20 @@
 
 async function fetchData1() {
   try {
-    // Fetch data from the backend
     const response = await fetch('/getip');
     
-    // Check if the request was successful (status code 200)
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    // Parse the JSON data
     const data = await response.json();
     const ob =JSON.stringify(data,null,2)
 
-    // console.log(ob)
-    // console.log(typeof(ob))
     const parased=JSON.parse(ob)
-    // Use the data in the frontend
-    // console.log(response.body)
-    // console.log(parased.ip)
+  
     return parased.ip
 
-    // You can update your HTML or perform other actions with the data
+  
   } catch (error) {
     console.error('Error0 fetching data:', error);
   }
@@ -118,7 +111,6 @@ new Chart("myChart", {
     }
   }
   fetchData()
-  // Call the function to fetch data
   setInterval(fetchData,5000)
 
 
