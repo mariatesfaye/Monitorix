@@ -1,82 +1,20 @@
-// const usage1=[]
-
-// const time=[]
-// const time1=[]
-// const usage2=[]
-// async function fetchData() {
-//     try {
-//         console.log("hello")
-//       const response = await fetch('/disk');
-//       console.log("hello1")
-      
-//       if (!response.ok) {
-//         console.log("hello2")
-//         throw new Error('Network response was not ok');
-//       }
-  
-//       const data = await response.json();
-//       console.log("hello3")
-//       // Display or manipulate the data as needed
-//     //   console.log(data.free);
-//     //   console.log(typeof(data))
-      
-//       const ob =JSON.stringify(data,null,2)
-  
-//       // console.log(ob)
-//       // console.log(typeof(ob))
-//       const parased=JSON.parse(ob)
-//     console.log("hello4")
-//       document.getElementById("diskusage").innerHTML =parased;
-
-  
-//       // console.log(parased.time);
-//       // console.log(typeof(parased))
-      
-//       // return JSON.parse(ob).totalusage
-//       // if(arr.lenght<5){
-  
-//       //   arr.push({time:JSON.parse(ob).time,totol:JSON.parse(ob).totalusage})
-  
-//       // }
-//       // else if(arr.length>=5){
-//       //   arr.shift()
-//       //   arr.push({time:JSON.parse(ob).time,totol:JSON.parse(ob).totalusage})
-  
-  
-//       // }
-//       // console.log(arr[0])
-//       // console.log(arr)
-//     } catch (error) {
-//       console.error('Error fetching data:', error.message);
-//     }
-//   }
-//   fetchData()
-//   // Call the function to fetch data
-//   setInterval(fetchData,2000)
 
 async function fetchData1() {
   try {
-    // Fetch data from the backend
+    // this is to fetch data from the backend
     const response = await fetch('/getip');
     
-    // Check if the request was successful (status code 200)
+    // to check if the request was successful (status code 200)
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    // Parse the JSON data
     const data = await response.json();
     const ob =JSON.stringify(data,null,2)
 
-    // console.log(ob)
-    // console.log(typeof(ob))
     const parased=JSON.parse(ob)
-    // Use the data in the frontend
-    // console.log(response.body)
-    // console.log(parased.ip)
     return parased.ip
-
-    // You can update your HTML or perform other actions with the data
+        
   } catch (error) {
     console.error('Error0 fetching data:', error);
   }
@@ -101,14 +39,9 @@ async function fetchData() {
   
       const data = await response.json();
       console.log("hello3")
-      // Display or manipulate the data as needed
-    //   console.log(data.free);
-    //   console.log(typeof(data))
       
       const ob =JSON.stringify(data,null,2)
   
-      // console.log(ob)
-      // console.log(typeof(ob))
       const parased=JSON.parse(ob)
     console.log("hello4")
       document.getElementById("read").innerHTML =parased.read;
@@ -171,27 +104,10 @@ async function fetchData() {
     }
     }
     });
-      // console.log(parased.time);
-      // console.log(typeof(parased))
       
-      // return JSON.parse(ob).totalusage
-      // if(arr.lenght<5){
-  
-      //   arr.push({time:JSON.parse(ob).time,totol:JSON.parse(ob).totalusage})
-  
-      // }
-      // else if(arr.length>=5){
-      //   arr.shift()
-      //   arr.push({time:JSON.parse(ob).time,totol:JSON.parse(ob).totalusage})
-  
-  
-      // }
-      // console.log(arr[0])
-      // console.log(arr)
     } catch (error) {
       console.error('Error fetching data:', error.message);
     }
   }
   fetchData()
-  // Call the function to fetch data
   setInterval(fetchData,5000)
