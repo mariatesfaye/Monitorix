@@ -1,5 +1,5 @@
 const os= require('os')
-const si = require('systeminformation');
+const si = require('systeminformation'); 
 
 function gettime() {
   const now = new Date();
