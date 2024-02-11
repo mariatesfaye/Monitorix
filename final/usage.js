@@ -7,7 +7,6 @@ function gettime() {
   const hour=now.getHours()
   const minute = now.getMinutes();
   const second = now.getSeconds();
-  // console.log(`${minute}:${second}`)
   return `${hour}:${minute}:${second}`
 }
 
@@ -25,24 +24,19 @@ function memuse(){
 function cpuusage(){
     const x=os.cpus();
     
-    // console.log(x[0])
     total=0
     for(i=0;i<x.length;i++){
-        // console.log("hello")
         const core=x[i].times
         const totaltime=core.idle+core.irq+core.user+core.sys+core.nice;
         
         const usage = (100-((core.idle/totaltime)*100))
-        // console.log(usage)
         total=total+usage
     }
-    // console.log(total)
 return {totalusage:total.toFixed(1),time:gettime(),model:x[0].model}
 }
 
 async function cpuusage1(){
   try{
-  // console.log("hello1")
   const begin=os.cpus();
   await new Promise((resolve) => setTimeout(resolve, 2000));
   const end =os.cpus()
@@ -51,8 +45,6 @@ async function cpuusage1(){
   for(i=0;i<begin.length;i++){
     const core=begin[i].times
     const coresec=end[i].times
-    // console.log(core)
-    // console.log(coresec)
     // for(j=0;j<5;j++){
       const changeidle=Math.abs(core.idle-coresec.idle)
       
@@ -65,14 +57,12 @@ async function cpuusage1(){
       const totalnotused=changeidle/(changeidle+changeirq+changenice+changesys+changeuser)
       const percent =100-(totalnotused*100)
       totalpercent=totalpercent+percent
-      // console.log(percent)
-    // }
+     }
     
 
   }
   
   const usage=totalpercent/(begin.length-6)
-  // console.log(totalpercent)
   console.log(usage)
   return {totalusage:usage.toFixed(1),time:gettime(),model:begin[0].model}
   
@@ -90,25 +80,20 @@ async function cpuusage1(){
 
 
 
-// Function to get network usage information
+// This is a function to get network usage information
 async function getNetworkUsage2() {
   try {
     const networkStats = await si.networkStats();
-    // console.log('Network Usage Information:');
-    // console.log(networkStats[0]);
     let timetransfered=networkStats[0].tx_sec
     let timerecieced=networkStats[0].rx_sec
     let transferedmegaby=((networkStats[0].tx_bytes)/(1024))
     let recivedmegaby= ((networkStats[0].rx_bytes)/(1024))
     let tranfermbpersec=(transferedmegaby/timetransfered).toFixed(4)
     let recievedmbpersec=(recivedmegaby/timerecieced).toFixed(4)
-// console.log("hello")
 if(recievedmbpersec==Infinity||recievedmbpersec===NaN){
-  // console.log("hello1")
   recievedmbpersec=0;
 }
 if(tranfermbpersec==Infinity||tranfermbpersec===NaN){
-  // console.log("hello2")
   tranfermbpersec=0;
 }
 console.log(tranfermbpersec,recievedmbpersec)
@@ -124,24 +109,24 @@ return {send:tranfermbpersec,recive:recievedmbpersec,time:gettime()}
 
 async function getNetworkUsage() {
     try {
-      // Get network stats at the start
+      // To get network stats at the start
       const startNetworkStats = await si.networkStats();
   
-      // Wait for a specific time interval (e.g., 1 second)
+      // Wait for a specific time interval (like, 1 second)
       await new Promise((resolve) => setTimeout(resolve, 1000));
   
-      // Get network stats again after the time interval
+      // To get network stats again after the time interval
       const endNetworkStats = await si.networkStats();
   
-      // Calculate the rate of data transfer in bytes per second
+      // To calculate the rate of data transfer in bytes per second
       const bytesTransmitted = endNetworkStats[0].tx_bytes - startNetworkStats[0].tx_bytes;
       const bytesReceived = endNetworkStats[0].rx_bytes - startNetworkStats[0].rx_bytes;
   
-      // Convert bytes to megabytes
+      // To convert bytes to megabytes
       const megabytesTransmitted = bytesTransmitted / (1024 * 1024);
       const megabytesReceived = bytesReceived / (1024 * 1024);
   
-      // Calculate the rate in MB/s
+      // To calculate the rate in MB/s
       const mbpsTransmitted = (megabytesTransmitted / 1); // 1 second interval
       const mbpsReceived = (megabytesReceived / 1); // 1 second interval
   
@@ -172,17 +157,9 @@ async function getdiskusage(){
         const startdiskusage=await si.fsStats()
         await new Promise((resolve) => setTimeout(resolve, 1000));
         const enddiskusage=await si.fsStats()
-        // si.fsStats.
         console.log("tryyyyyy1")
-        // console.log(startdiskusage)
-        // console.log(enddiskusage)
-        // const write = enddiskusage.wx-startdiskusage.wx
-        // const read =enddiskusage.rx-startdiskusage.rx
-        // console.log("tryyyyyy2",read,write)
         const readspeed=(enddiskusage.rx_sec/1024).toFixed(2)
         const writespeed =(enddiskusage.wx_sec/1024).toFixed(2)
-        // console.log(startdiskusage)
-        // console.log(enddiskusage)
         console.log(readspeed,writespeed)
        
         return {read:readspeed,write:writespeed,time:gettime()}
