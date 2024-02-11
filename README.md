@@ -1,4 +1,4 @@
-### Monitorix- A Linux System Performance Monitoring Platform
+# Monitorix- A Linux System Performance Monitoring Platform
 
 This repository contains code for a web-based platform designed to monitor key Linux system performance metrics. It offers insights into network, CPU, memory, and disk usage in real-time, facilitating efficient system management.
 
@@ -17,22 +17,22 @@ Employs Monitorix to display performance data through various chart types, inclu
 ## Real-time Updates: 
 The tool updates data visuals every 3 seconds, providing near real-time insights into system performance.
 
- Performance Metrics Tracked
+### Performance Metrics Tracked
 Monitorix currently tracks 8 core performance metrics:
 
- Memory
+#### Memory
 - Total Memory
 - Free Memory
 - Used Memory
 - Percentage Memory Utilization
 
- CPU
+#### CPU
 - Percentage CPU Utilization
 
- Network
+#### Network
 - Bytes Sent per Second on Each Network Interface,
 - Bytes Received per Second on Each Network Interface
 
- Disk
+#### Disk
 - Disk Read per Second for Each Mounted Disk-
 - Disk Write per Second for Each Mounted Disk
