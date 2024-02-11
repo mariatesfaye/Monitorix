@@ -12,7 +12,7 @@ Utilizes the Linux performance monitoring tool psutil from Node.js/Express to ga
 Developed a RESTful API to expose collected performance metrics to the frontend, ensuring seamless data transfer.
 
 ## Data Visualization: 
-Employs Monitorix to display performance data through various chart types, including bar charts, line charts, and area charts, for clear and intuitive visualization.
+Employs Monitorix to display performance data through various chart types, including bar charts, line charts, and area charts, for clear and intuitive visualization. 
 
 ## Real-time Updates: 
 The tool updates data visuals every 3 seconds, providing near real-time insights into system performance.
