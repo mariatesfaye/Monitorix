@@ -35,4 +35,4 @@ Monitorix currently tracks 8 core performance metrics:
 
 #### Disk
 - Disk Read per Second for Each Mounted Disk-
-- Disk Write per Second for Each Mounted Disk
+- Disk Write per Second for Each Mounted Disk 
