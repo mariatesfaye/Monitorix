@@ -11,21 +11,15 @@ app.use(express.urlencoded({ extended: true }));
 var ip=[]
 
 app.post("/getserver",(req,res)=>{
-    // ip.pop()
     ip.push(req.body.dataInput)
-    // var currentip=ip.pop()
     console.log("find server")
     console.log(ip)
-    // console.log(currentip)
-    // ip.pop()
-    // console.log(currentip)
     
     res.redirect('/cpu.html')
 })
-// createmem()
+// to createmem()
 console.log(ip)
 app.get("/getip",(req,res)=>{
-    // currentip
     console.log("getip")
     console.log(ip[0])
     res.json({"ip":`${ip[0]}`})
@@ -37,9 +31,7 @@ app.get("/getip",(req,res)=>{
 })
 app.get("/history",async(req,res)=>{
     console.log("what")
-    // console.log(typeof(getcpuhistory))
     res.send(await getcpuhistory())
-    // res.send(await getmemhistory())
 
 })
 app.get("/historymem",async(req,res)=>{
@@ -61,20 +53,13 @@ app.get("/historynetwork",async(req,res)=>{
     res.send(await genethistory())
 
 })
-    
-// createnetwork()
 
 
-setInterval(createcpu,5000)
-// setInterval(createdisk,5000)
+
+setInterval(createcpu,5000))
 setInterval(createmem,5000)
 setInterval(createnetwork,5000)
 
-// function changeserver(){
-//     return '${ip}:5000'
-  
-//   }
-// console.log(createcpu())
   
 app.get("/network",async(req,res)=>{
     
@@ -84,10 +69,6 @@ app.get("/mem",(req,res)=>{
     res.send(memuse())
 
 })
-// app.get("/cpu",(req,res)=>{
-//     res.send(cpuusage())
-
-// })
 app.get("/cpu",async (req,res)=>{
     res.send( await cpuusage1())
 
@@ -99,10 +80,9 @@ app.get("/disk",async(req,res)=>{
 
 app.listen(port,()=>{
     console.log(`app is kjds in ${port}`)
-    // getdiskusage()
+    // to getdiskusage()
 
    
 })
 
-// module.exports=ip
 
