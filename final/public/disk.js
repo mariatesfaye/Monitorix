@@ -1,6 +1,6 @@
 
 async function fetchData1() {
-  try {
+  try { 
     // this is to fetch data from the backend
     const response = await fetch('/getip');
     
