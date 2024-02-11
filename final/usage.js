@@ -1,7 +1,6 @@
 const os= require('os')
 const si = require('systeminformation');
 
-
 function gettime() {
   const now = new Date();
   const hour=now.getHours()
@@ -11,7 +10,6 @@ function gettime() {
 }
 
 
-
 function memuse(){
     const totalmem= ((os.totalmem())/1024/1024)
     const freeme=((os.freemem())/1024/1024)
@@ -19,7 +17,6 @@ function memuse(){
     const usagepercent=((usedmem/totalmem)*100).toFixed(2)
     return {used:usedmem,free:freeme.toFixed(1),tot:totalmem.toFixed(1),percent:usagepercent,time:gettime()}
 }
-
 
 function cpuusage(){
     const x=os.cpus();
@@ -77,9 +74,6 @@ async function cpuusage1(){
 }
 
 
-
-
-
 // This is a function to get network usage information
 async function getNetworkUsage2() {
   try {
@@ -102,9 +96,6 @@ return {send:tranfermbpersec,recive:recievedmbpersec,time:gettime()}
     console.error('Error fetching network usage information:', error);
   }
 }
-
-
-
 
 
 async function getNetworkUsage() {
@@ -146,9 +137,6 @@ async function getNetworkUsage() {
       console.error('Error fetching network usage information:', error);
     }
   }
-
-
-
 
 
 async function getdiskusage(){
