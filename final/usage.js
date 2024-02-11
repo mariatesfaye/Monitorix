@@ -6,7 +6,7 @@ function gettime() {
   const hour=now.getHours()
   const minute = now.getMinutes();
   const second = now.getSeconds();
-  return `${hour}:${minute}:${second}`
+  return `${hour}:${minute}:${second}` 
 }
 
 
