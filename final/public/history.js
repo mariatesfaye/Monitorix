@@ -1,31 +1,3 @@
-
-// async function fetchData1() {
-//     try {
-//       // Fetch data from the backend
-//       const response = await fetch('/getip');
-      
-//       // Check if the request was successful (status code 200)
-//       if (!response.ok) {
-//         throw new Error(`HTTP error! Status: ${response.status}`);
-//       }
-  
-    
-//       const data = await response.json();
-//       const ob =JSON.stringify(data,null,2)
-  
-//       const parased=JSON.parse(ob)
-     
-//       return parased.ip
-  
-//       // You can update your HTML or perform other actions with the data
-//     } catch (error) {
-//       console.error('Error0 fetching data:', error);
-//     }
-//   }
-
-//   const usage=[]
-//   const time=[]
-// //   console.log("je")
   async function fetchData() {
     try {
 
@@ -72,10 +44,7 @@ new Chart("myChart", {
     }
   }
   fetchData()
-  // Call the function to fetch data
-  // if()
-//   setInterval(fetchData,5000)
-  
+ 
 async function fetchData1() {
     try {
 
@@ -185,9 +154,9 @@ async function fetchData3() {
     }
 
     const data = await response.json();
-    // console.log(data)
+    
     const ob =JSON.stringify(data,null,2)
-    // console.log(ob)
+    
     const parased=JSON.parse(ob)
     console.log(parased)
     const xValues=[]
@@ -201,7 +170,6 @@ yvalues1.push(parased.send[`${i}`])
 }
 
 
-// const xValues = [100,200,300,400,500,600,700,800,900,1000];
 new Chart("myChart3", {
   type: "line",
   data: {
